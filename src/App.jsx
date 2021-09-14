@@ -9,7 +9,7 @@ import './App.css';
 // import EstilosEnModulo from './Components/EstilosEnModulo'
 // import EstilosConStyled from './Components/EstilosConStyled.jsx'
 // import Refs from './Components/Refs.jsx'
- import CicloVidaComponentes from './Components/CicloVidaComponentes.jsx'
+//  import CicloVidaComponentes from './Components/CicloVidaComponentes.jsx'
 // import Hooks from './Components/Hooks.jsx'
 // import Formularios from './Components/Formularios.jsx'
 // import Eventos from './Components/Eventos.jsx'
@@ -23,11 +23,12 @@ import './App.css';
 // import Fetch from './Components/Fetch.jsx'
   // import Axios from './Components/Axios.jsx'
   // import Padre from './Components/Rutas/Padre.jsx'
-  import {useCount} from './Components/hooks/useCount.jsx'
-
-
-
-  function App() {
+  // import {useCount} from './Components/hooks/useCount.jsx'
+   import {Provider} from 'react-redux'
+   import store from './Redux/store.js'
+   import Contador from './Components/Contador.jsx'
+  
+   function App() {
 
     //  const[contador]=useCount(0)
 
@@ -57,7 +58,7 @@ import './App.css';
       {/* <EstilosEnModulo/> */}
       {/* <EstilosConStyled/> */}
        {/* <Refs/> */}
-       <CicloVidaComponentes/>
+       {/* <CicloVidaComponentes/> */}
        {/* <Hooks/> */}
        {/* <Formularios/> */}
        {/* <Eventos/> */}
@@ -74,7 +75,21 @@ import './App.css';
        <button onClick={estadoComponente}>Pulsa</button> */}
        
        {/* <h1>{contador}</h1> */}
+       
+       {/* <UserProvider>
+            
+            <ListaUsuarios/>
+
+       </UserProvider> */}
      
+     
+     <Provider store={store}>
+       
+       <Contador/>
+
+     </Provider>
+
+  
      </>
   
   
